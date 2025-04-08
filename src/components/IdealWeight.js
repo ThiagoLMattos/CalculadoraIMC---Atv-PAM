@@ -3,7 +3,7 @@ import { Text, StyleSheet} from 'react-native';
 
 const IdealWeight = ({pesoMin, pesoMax}) => {
     return (
-        <Text style={style.result}>Seu pesoideal é entre: {pesoMin} e {pesoMax} </Text>
+        <Text style={style.result}>Seu peso ideal é entre: {pesoMin}kg e {pesoMax}kg </Text>
     );
 };
 

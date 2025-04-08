@@ -1,14 +1,17 @@
 import { StyleSheet, View } from 'react-native';
 import Title from './src/components/Title';
 import FormIMC from './src/components/FormIMC';
+import { Keyboard, TouchableWithoutFeedback } from 'react-native';
 
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Title />
-      <FormIMC />
-    </View> 
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={styles.container}>
+        <Title />
+        <FormIMC />
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
 
@@ -17,6 +20,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: 16,
-    backgroundColor: '#fff',
+    backgroundColor: '#DFF5EA',
   },
 });
