@@ -3,12 +3,12 @@
 ---
 
 ## 📚 Sumário
-- [📌 Introdução](#-)
-- [🧠 Funcionalidades](#-)
-- [⚙️ Como instalar e executar](#-)
-- [💠 Tecnologias utilizadas](#-)
-- [📄 Licença](#-)
-- [🎥 Vídeo explicativo](#-)
+- [📌 Introdução](#-introdução)
+- [🧠 Funcionalidades](#-funcionalidades)
+- [⚙️ Como instalar e executar](#%EF%B8%8F-como-instalar-e-executar)
+- [💠 Tecnologias utilizadas](#-tecnologias-utilizadas)
+- [📄 Licença](#-licença)
+- [🎥 Vídeo explicativo](#-vídeo-explicativo)
 
 ---
 
