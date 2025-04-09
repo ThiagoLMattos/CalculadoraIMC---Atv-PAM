@@ -20,7 +20,7 @@
 
   1. Clone o repositório:
 
-    git clone [https://github.com/seu-usuario/nome-do-repo.git](https://github.com/ThiagoLMattos/CalculadoraIMC---Atv-PAM/tree/main)
+    git clone (https://github.com/ThiagoLMattos/CalculadoraIMC---Atv-PAM/)
     cd CalculadoraIMC---Atv-PAM
 
   2. Instale as dependências:
