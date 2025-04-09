@@ -1,5 +1,6 @@
 import { Text, StyleSheet } from 'react-native';
 
+//Componente gráfico para título
 const Title = () => {
     return (
         <Text style={styles.title}>🌿Calculadora de IMC🍃</Text>

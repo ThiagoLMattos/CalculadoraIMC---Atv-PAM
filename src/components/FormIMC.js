@@ -1,10 +1,11 @@
-import { View, TextInput, Text, TouchableOpacity, StyleSheet, Animated, Easing } from 'react-native';
+import { View, TextInput, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Result from './Result';
 import Classification from './Classification';
 import IdealWeight from './IdealWeight';
 import { useState } from 'react';
 
 const FormIMC = () => {
+    //Variaveis utilizando useState()
     const [peso, setPeso] = useState('');
     const [altura, setAltura] = useState('');
     const [imc, setImc] = useState(null);
@@ -14,34 +15,38 @@ const FormIMC = () => {
     const [erroPeso, setErroPeso] = useState('');
     const [erroAltura, setErroAltura] = useState('');
     
-
+    
+    //Função de validação
     const validarPeso = (texto) => {
-        setPeso(texto);
-        const pesoNum = parseFloat(texto);
-        if (isNaN(pesoNum) || pesoNum <= 0 || pesoNum.toString() !== texto.trim()) {
-          setErroPeso('Digite um peso válido');
+
+        setPeso(texto.replace(",",".")); //Recebe o valor do input e evita erro de digitação
+        const pesoNum = parseFloat(texto); 
+        if (isNaN(pesoNum) || pesoNum <= 0 || pesoNum.toString() !== texto.trim()) { //Verifica se ao tirar os espaços(trim), ainda há caracteres ao transformar em strings(toString)
+          setErroPeso('Digite um peso válido'); //Resposta em tempo real graças ao useState
         } else {
-          setErroPeso('');
+          setErroPeso(''); //Caso passe na verificação, retorna um valor vazio aceito para o funcionamento do botão
         }
       }
       
+      //Função de validação
       const validarAltura = (texto) => {
-        setAltura(texto);
-        const alturaNum = parseFloat(texto);
-        if (isNaN(alturaNum) || alturaNum <= 0 || alturaNum.toString() !== texto.trim()) {
-          setErroAltura('Digite uma altura válida');
+        setAltura(texto.replace(",",".")); //Recebe o valor do input e evita erro de digitação
+        const alturaNum = parseFloat(texto); 
+        if (isNaN(alturaNum) || alturaNum <= 0 || alturaNum.toString() !== texto.trim()) { //Verifica se ao tirar os espaços(trim), ainda há caracteres ao trasnformar em strings(toString)
+          setErroAltura('Digite uma altura válida'); //Resposta em tempo real graças ao useState
         } else {
-          setErroAltura('');
+          setErroAltura(''); //Caso passe na verificação, retorna um valor vazio aceito para o funcionamento do botão
         }
       }
 
+      //Função para calcular o IMC
     const calcularIMC = () => {
         if (peso && altura) {
-            const alturaMetros = parseFloat(altura) / 100;
-            const imcCalculado = (parseFloat(peso) / (alturaMetros * alturaMetros)).toFixed(2);
-            setImc(imcCalculado);
+            const alturaMetros = parseFloat(altura) / 100; //Transforma o valor em metros
+            const imcCalculado = (parseFloat(peso) / (alturaMetros * alturaMetros)).toFixed(2); //Realiza o calculo
+            setImc(imcCalculado); //Recebe por meio de useState
 
-            const imcNum = parseFloat(imcCalculado);
+            const imcNum = parseFloat(imcCalculado); //Utiliza if e elses para classificar, usa imcNum para evitar erros de useState
             if (imcNum < 18.5) setClassificacao('Abaixo do peso 😟');
             else if (imcNum < 25) setClassificacao('Peso normal 😄');
             else if (imcNum < 30) setClassificacao('Sobrepeso 😐');
@@ -51,14 +56,16 @@ const FormIMC = () => {
         }
     };
 
+    //Função para calcular o peso
     const pesoIdeal = () => {
         if (peso && altura) {
-            const alturaMetros = parseFloat(altura) / 100;
-            setPesoMin((18.5 * (alturaMetros * alturaMetros)).toFixed(2));
+            const alturaMetros = parseFloat(altura) / 100; //Transforma o valor em metros
+            setPesoMin((18.5 * (alturaMetros * alturaMetros)).toFixed(2)); //Realiza os calculos
             setPesoMax((24.9 * (alturaMetros * alturaMetros)).toFixed(2));
         }
     }
 
+    //Função para limpar os campos, reinicializando-os
     const limparCampos = () => {
         setPeso('');
         setAltura('');
@@ -68,9 +75,9 @@ const FormIMC = () => {
         setPesoMax('');
     }
     
-    
+    //Função que agrupa outras funções para funcionamento do botão
     const botao = () => {
-        if (erroPeso != '' || erroAltura != '') {
+        if (erroPeso != '' || erroAltura != '') { //Caso passe na verificação, realiza as funções / Caso não passe, reinicia os valores e impede funcionamento
             setImc(null);
             setClassificacao(null);
             setPesoMin('');
@@ -89,23 +96,26 @@ const FormIMC = () => {
                 placeholder="Peso (kg)"
                 placeholderTextColor="#999"
                 keyboardType="numeric"
-                value={peso}
-                onChangeText={validarPeso}
+                value={peso} //Recebe como parametro peso
+                onChangeText={validarPeso} //Inicia função de validação
             />
-            {erroPeso ? <Text style={styles.erro}>{erroPeso}</Text> : null}
+            {erroPeso ? <Text style={styles.erro}>{erroPeso}</Text> : null} 
+            {/*Caso a função de validação retorne um valor não nulo, identificado por meio de um for each, aparece a mensagem de erro */}
 
             <TextInput
                 style={styles.input}
                 placeholder="Altura (cm)"
                 placeholderTextColor="#999"
                 keyboardType="numeric"
-                value={altura}
-                onChangeText={validarAltura}
+                value={altura} //Recebe como parametro altura
+                onChangeText={validarAltura} //Inicia função de validação
             />
             {erroAltura ? <Text style={styles.erro}>{erroAltura}</Text> : null}
+            {/*Caso a função de validação retorne um valor não nulo, identificado por meio de um for each, aparece a mensagem de erro */}
 
 
-            <TouchableOpacity style={styles.button} onPress={botao}>
+            {/* Criação dos botões que chamam as funções criadas, utiliza TouchableOpacity para responsividade*/}
+            <TouchableOpacity style={styles.button} onPress={botao}> 
                 <Text style={styles.buttonText}>Calcular IMC</Text>
             </TouchableOpacity>
 
@@ -113,6 +123,7 @@ const FormIMC = () => {
                 <Text style={styles.buttonText}>Limpar</Text>
             </TouchableOpacity>
 
+            {/*Utiliza os valores e inicializa as funções dos componentes gráficos */}
             {imc && <Result imc={imc} />}
             {classificacao && <Classification classIMC={classificacao} />}
             {pesoMin && pesoMax && <IdealWeight pesoMin={pesoMin} pesoMax={pesoMax} />}

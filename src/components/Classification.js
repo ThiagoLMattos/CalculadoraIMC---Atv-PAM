@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet} from 'react-native';
 
+//Componente gráfica para classificação
 const Classification = ({classIMC}) => {
     return (
         <Text style={style.result}>Seu IMC está: {classIMC}</Text>

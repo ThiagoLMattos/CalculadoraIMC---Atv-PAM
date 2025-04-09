@@ -4,11 +4,14 @@ import FormIMC from './src/components/FormIMC';
 import { Keyboard, TouchableWithoutFeedback } from 'react-native';
 
 
+//Componente principal que inicializa as funções
+//Utiliza TouchableWithoutFeedback para funcionamento em sistemas que possuem a opção manual de retirar o teclado
 export default function App() {
   return (
+    
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-        <Title />
+        <Title /> 
         <FormIMC />
       </View>
     </TouchableWithoutFeedback>

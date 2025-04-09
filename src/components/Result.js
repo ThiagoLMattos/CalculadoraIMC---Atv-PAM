@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet} from 'react-native';
 
+//Componente gráfico para imc
 const Result = ({imc}) => {
     return (
         <Text style={style.result}>Seu IMC é de: {imc}</Text>

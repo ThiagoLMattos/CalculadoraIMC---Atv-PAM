@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet} from 'react-native';
 
+//Componente gráfico para o peso ideal
 const IdealWeight = ({pesoMin, pesoMax}) => {
     return (
         <Text style={style.result}>Seu peso ideal é entre: {pesoMin}kg e {pesoMax}kg </Text>
