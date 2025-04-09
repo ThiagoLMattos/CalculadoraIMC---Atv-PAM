@@ -1,9 +1,9 @@
-📱 Calculadora de IMC (Índice de Massa Corporal)
+# 📱 Calculadora de IMC (Índice de Massa Corporal)
 
   Uma aplicação mobile desenvolvida em React Native com Expo para calcular o IMC (Índice de Massa Corporal) do usuário com base no peso e altura informados.
 
 
-🧠 Funcionalidades
+# 🧠 Funcionalidades
 
   • Cálculo do IMC com base em peso (kg) e altura (cm)
 
@@ -16,12 +16,12 @@
   • Botão de limpar os dados
 
 
-⚙️ Como instalar e executar
+# ⚙️ Como instalar e executar
 
   1. Clone o repositório:
 
-    git clone https://github.com/seu-usuario/nome-do-repo.git
-    cd nome-do-repo
+    git clone [https://github.com/seu-usuario/nome-do-repo.git](https://github.com/ThiagoLMattos/CalculadoraIMC---Atv-PAM/tree/main)
+    cd CalculadoraIMC---Atv-PAM
 
   2. Instale as dependências:
 
@@ -37,8 +37,15 @@
 
   Ou pressione a para abrir no emulador Android, i para iOS (se estiver em um Mac com Xcode) ou w para web.
 
-💠 Tecnologias utilizadas
+# 💠 Tecnologias utilizadas
 
-  React Native
+  ![image](https://github.com/user-attachments/assets/fc01ccc2-178d-4e1c-b263-afd7db5a5860)
 
-  Expo
+
+  ![image](https://github.com/user-attachments/assets/2d684014-416e-48f4-b74c-2947c477d7a0)
+
+
+# 📄 Licença
+
+  Este projeto é apenas para fins educacionais.
+
