@@ -32,7 +32,7 @@ const FormIMC = () => {
       const validarAltura = (texto) => {
         setAltura(texto.replace(",",".")); //Recebe o valor do input e evita erro de digitação
         const alturaNum = parseFloat(texto); 
-        if (isNaN(alturaNum) || alturaNum <= 0 || alturaNum.toString() !== texto.trim()) { //Verifica se ao tirar os espaços(trim), ainda há caracteres ao trasnformar em strings(toString)
+        if (isNaN(alturaNum) || alturaNum <= 0 || alturaNum.toString() !== texto.trim()) { //Verifica se ao tirar os espaços(trim), ainda há caracteres ao transformar em strings(toString)
           setErroAltura('Digite uma altura válida'); //Resposta em tempo real graças ao useState
         } else {
           setErroAltura(''); //Caso passe na verificação, retorna um valor vazio aceito para o funcionamento do botão
