@@ -49,3 +49,6 @@
 
   Este projeto é apenas para fins educacionais.
 
+# 🎥 Vídeo explicativo
+
+https://drive.google.com/file/d/19IX6J67RT6yvxzh4nKC0pET9jgpxn6AU/view?usp=sharing
